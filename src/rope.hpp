@@ -22,10 +22,7 @@ class rope
     public:
     rope(float x1, float x2, float y1, float y2, unsigned int nparticles);
 
-    void step(){
-        verletintegration();
-        enforceconstraints();
-    }   
+    void step();
 
     private:
     void verletintegration();
