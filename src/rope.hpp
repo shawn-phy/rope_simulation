@@ -31,7 +31,7 @@ class rope
     void verletintegration();
     void enforceconstraints();
 
-    std::vector<particle> _particle;
+    std::vector<particle> _particles;
     float _desireddistance;
 };
 #endif
