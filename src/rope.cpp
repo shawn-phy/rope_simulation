@@ -1,5 +1,9 @@
 #include "rope.hpp"
 
+
+float gravity = -9.81f;
+float dt = 0.01f;
+unsigned int max_iterations = 10;
 rope::rope(float x1, float x2, float y1, float y2, unsigned int nparticles)
 {
     for (unsigned int i = 0; i < nparticles; i++)
