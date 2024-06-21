@@ -5,9 +5,9 @@
 #include <math.h>
 #include <stdlib.h>
 
-float gravity = -9.8f;
-float dt = 0.01f;
-unsigned int max_iterations = 10;
+extern float gravity;
+extern float dt;
+extern unsigned int max_iterations;
 
 struct particle
 {
