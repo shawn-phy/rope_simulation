@@ -1,4 +1,4 @@
-#include "rope.hpp"
+#include "../include/ropesim_bits/rope.hpp"
 
 namespace simlogic{
     
