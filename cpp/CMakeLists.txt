@@ -27,7 +27,7 @@ add_library(ropesim SHARED ${SOURCE_FILES})
 
 target_include_directories(ropesim PRIVATE include/ropesim_bits)
 
-install(TARGET ropesim DESTINATION lib)
+install(TARGETS ropesim DESTINATION lib)
 
 install(FILES include/ropesim DESTINATION include)
 
@@ -35,4 +35,4 @@ install(DIRECTORY include/ropesim_bits DESTINATION include)
 
 
 
-add_executable(rope_simulation ${SOURCE_FILES})
+#add_executable(rope_simulation ${SOURCE_FILES})
