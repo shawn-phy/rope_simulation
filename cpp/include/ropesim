@@ -1,0 +1,6 @@
+#ifndef ROPE_LIBRARY_H
+#define ROPE_LIBRARY_H
+
+#include "ropesim_bits/rope.hpp"
+
+#endif
