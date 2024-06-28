@@ -5,6 +5,8 @@
 #include <math.h>
 #include <stdlib.h>
 
+namespace simlogic {
+
 extern float gravity;
 extern float dt;
 extern unsigned int max_iterations;
@@ -31,4 +33,5 @@ class rope
     std::vector<particle> _particles;
     float _desireddistance;
 };
+}
 #endif
