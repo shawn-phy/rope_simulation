@@ -7,10 +7,32 @@ SET(CMAKE_CXX_EXTENSIONS OFF)
 PROJECT(rope_simulation CXX)
 
 
-include_directories(${PROJECT_SOURCE_DIR}/src)
+include_directories(cpp/include)
+
+aux_source_directory(src SRC_FILES)
+
+set(PROJECT_SOURCE_DIR "src")
+set(PROJECT_INCLUDE_DIR "include/ropesim_bits")
+
 
 set(SOURCE_FILES 
-    src/rope.cpp
-    main.cpp)
+${PROJECT_SOURCE_DIR}/rope.cpp
+${PROJECT_INCLUDE_DIR}/rope.hpp)
+
+
+source_group(TREE ${CMAKE_CURRENT_SOURCE_DIR} FILES ${SOURCE_FILES})
+
+
+add_library(ropesim SHARED ${SOURCE_FILES})
+
+target_include_directories(ropesim PRIVATE include/ropesim_bits)
+
+install(TARGET ropesim DESTINATION lib)
+
+install(FILES include/ropesim DESTINATION include)
+
+install(DIRECTORY include/ropesim_bits DESTINATION include)
+
+
 
 add_executable(rope_simulation ${SOURCE_FILES})
