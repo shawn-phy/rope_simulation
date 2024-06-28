@@ -1,6 +1,6 @@
 #include "rope.hpp"
 
-
+namespace simlogic{
 int main()
 {
     rope r(0, 0, 0, 0, 100);
@@ -10,4 +10,5 @@ int main()
     }
 
     return 0;
+}
 }
