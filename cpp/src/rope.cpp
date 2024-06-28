@@ -1,6 +1,7 @@
 #include "rope.hpp"
 
-
+namespace simlogic{
+    
 float gravity = -9.81f;
 float dt = 0.01f;
 unsigned int max_iterations = 10;
@@ -107,3 +108,4 @@ void rope::step()
     verletintegration();
     enforceconstraints();
 }
+} 
