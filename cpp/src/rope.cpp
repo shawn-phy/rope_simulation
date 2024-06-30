@@ -5,6 +5,17 @@ namespace simlogic{
 float gravity = -9.81f;
 float dt = 0.01f;
 unsigned int max_iterations = 10;
+/**
+ * Constructor for creating a rope defined by the points (x1, y1) and (x2, y2) with nparticles.
+ *
+ * @param x1 The x-coordinate of the starting point
+ * @param x2 The x-coordinate of the ending point
+ * @param y1 The y-coordinate of the starting point
+ * @param y2 The y-coordinate of the ending point
+ * @param nparticles The number of particles to create the rope
+ *
+ * @throws None
+ */
 rope::rope(float x1, float x2, float y1, float y2, unsigned int nparticles)
 {
     for (unsigned int i = 0; i < nparticles; i++)
@@ -28,6 +39,12 @@ rope::rope(float x1, float x2, float y1, float y2, unsigned int nparticles)
     float _desireddistance = ropelength / noofsegments;
 }
 
+/**
+ * Performs Verlet integration on the particles of the rope.
+ * This function updates the position of each particle based on its velocity and the gravitational force.
+ *
+ * @throws None
+ */
 void rope::verletintegration()
 {
     for (particle &p : _particles)
@@ -55,6 +72,18 @@ void rope::verletintegration()
     }
 }
 
+/**
+ * Enforces the constraints of the rope by adjusting the positions of the particles.
+ *
+ * This function iterates over each pair of particles in the rope and calculates the distance between them.
+ * It then calculates the distance error by subtracting the desired distance from the actual distance.
+ * The direction in which the particles should be pulled or pushed is calculated using the difference in their positions.
+ * The direction is normalized to make it a unit vector.
+ * The function then updates the positions of the particles based on the direction and distance error.
+ * The fixed particles are not moved.
+ *
+ * @throws None
+ */
 void rope::enforceconstraints()
 {
     // We perform the enforcement multiple times
@@ -103,6 +132,13 @@ void rope::enforceconstraints()
     }
 }
 
+/**
+ * Performs a single step in the simulation.
+ *
+ * This function calls the `verletintegration()` method to update the positions of the particles based on their velocities and the gravitational force. Then, it calls the `enforceconstraints()` method to ensure that the particles remain connected and within the desired distance.
+ *
+ * @throws None
+ */
 void rope::step()
 {
     verletintegration();
