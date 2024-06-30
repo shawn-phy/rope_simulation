@@ -1,3 +1,4 @@
 {
-    "cmake.sourceDirectory": "/home/shawnphy/Documents/code/rope_simulation/cpp"
+    "cmake.sourceDirectory": "/home/shawnphy/Documents/code/rope_simulation/cpp",
+    "C_Cpp.errorSquiggles": "disabled"
 }
