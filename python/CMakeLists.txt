@@ -14,18 +14,21 @@ set(CMAKE_CXX_FLAGS_RELEASE "-O3")
 
 #the following lines should be deleted on production
 set(PYTHON_LIBRARY_DIR "bindings/lib/python3.10/site-packages")
-set(PYTHON_EXECUTABLE "bindings/bin/python3")
-# remember to remove above lines 
+set(PYTHON_EXECUTABLE "/usr/bin/python3")
+# remember to remove above lines
+
+
+set(pybind11_DIR "/home/shawnphy/Documents/code/rope_simulation/bindings/lib/python3.10/site-packages/pybind11/share/cmake/pybind11")
 
 project(ropesim)
 
 include_directories(${CMAKE_SOURCE_DIR}/cpp/include/ropesim_bits)
 include_directories(${CMAKE_SOURCE_DIR}/python)
 
+file(GLOB SOURCE_FILES "${CMAKE_SOURCE_DIR}/cpp/src/*.cpp")
+file(GLOB HEADER_FILES "${CMAKE_SOURCE_DIR}/cpp/include/*.hpp")
+file(GLOB PYTHON_FILES "${CMAKE_SOURCE_DIR}/python/*.cpp" "${CMAKE_SOURCE_DIR}/python/*.hpp")
 
-file(GLOB SOURCE_FILES "cpp/src/*.cpp")
-file(GLOB HEADER_FILES "cpp/include/*.hpp")
-file(GLOB PYTHON_FILES "python/*.cpp" "python/*.hpp")
 
 source_group(TREE ${CMAKE_CURRENT_SOURCE_DIR} FILES ${SOURCE_FILES} ${HEADER_FILES} ${PYTHON_FILES} )
 
