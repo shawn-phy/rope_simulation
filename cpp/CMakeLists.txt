@@ -7,7 +7,7 @@ SET(CMAKE_CXX_EXTENSIONS OFF)
 PROJECT(rope_simulation CXX)
 
 
-include_directories(cpp/include)
+include_directories(usr/local/include)
 
 aux_source_directory(src SRC_FILES)
 
