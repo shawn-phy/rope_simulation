@@ -2,3 +2,4 @@
 /build
 cpp/tests/build
 /bindings
+python/build
