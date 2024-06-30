@@ -29,7 +29,7 @@ file(GLOB SOURCE_FILES "${CMAKE_SOURCE_DIR}/../cpp/src/*.cpp")
 file(GLOB HEADER_FILES "${CMAKE_SOURCE_DIR}/../cpp/include/*.hpp")
 file(GLOB PYTHON_FILES "${CMAKE_SOURCE_DIR}/*.cpp" "${CMAKE_SOURCE_DIR}/*.hpp")
 
-# Print found files for debugging
+# Prints debugging
 message(STATUS "SOURCE_FILES: ${SOURCE_FILES}")
 message(STATUS "HEADER_FILES: ${HEADER_FILES}")
 message(STATUS "PYTHON_FILES: ${PYTHON_FILES}")
@@ -55,11 +55,11 @@ execute_process(
     OUTPUT_STRIP_TRAILING_WHITESPACE
 )
 
-# Install the module
+
 install(TARGETS ropesim
     COMPONENT python
     LIBRARY DESTINATION "${PYTHON_SITE_PACKAGES}"
 )
 
-# Print the installation destination for verification
+
 message(STATUS "Python module will be installed to: ${PYTHON_SITE_PACKAGES}")
