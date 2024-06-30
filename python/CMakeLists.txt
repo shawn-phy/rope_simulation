@@ -12,7 +12,10 @@ set(CMAKE_CXX_FLAGS "-O3")
 set(CMAKE_CXX_FLAGS_RELEASE "-O3")
 
 
-
+#the following lines should be deleted on production
+set(PYTHON_LIBRARY_DIR "bindings/lib/python3.10/site-packages")
+set(PYTHON_EXECUTABLE "bindings/bin/python3")
+# remember to remove above lines 
 
 project(ropesim)
 
