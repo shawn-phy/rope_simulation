@@ -26,7 +26,6 @@ class rope
 
     void step();
 
-    private:
     void verletintegration();
     void enforceconstraints();
 
