@@ -3,11 +3,11 @@ from matplotlib import pyplot as plt
 import matplotlib.animation as animation
 
 
-rope = ropesim.rope(5, 1, 10, 0, 1000)
+rope = ropesim.rope(5, 19, 10, -10, 160)
 
-ropesim.gravity = 99.81
-ropesim.dt = 0.1
-ropesim.max_iterations = 100
+# ropesim.gravity = 9.81
+# ropesim.dt = 0.01
+# ropesim.max_iterations = 10
 
 
 fig, ax = plt.subplots(figsize=(20, 10))
@@ -18,7 +18,7 @@ text = ax.text(0.02, 0.95, '', transform=ax.transAxes)
 
 def init():
     ax.set_xlim(-10, 20)
-    ax.set_ylim(-20, 20) 
+    ax.set_ylim(-40, 20) 
     ax.set_xlabel('X pos')
     ax.set_ylabel('Y pos')
     ax.set_title('Rope Simulation visualization')

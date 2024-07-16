@@ -5,6 +5,11 @@ namespace py = pybind11;
 
 #include "../cpp/include/ropesim_bits/rope.hpp"
 
+/**
+ * Initializes the rope module for Python bindings.
+ *
+ * @param m The Python module to bind the rope classes and attributes to.
+ */
 void init_rope(py::module &m) {
     py::class_ <simlogic::particle>(m, "particle")
         .def(py::init())
